@@ -39,4 +39,9 @@ $(document).ready(function () {
       $('.success').fadeIn();
     }
   });
+
+  $('.main__scroll-down').click(function (e) { 
+    e.preventDefault();
+    $("html, body").animate({ scrollTop: $('.col-black').offset().top }, 1000);
+  });
 });
