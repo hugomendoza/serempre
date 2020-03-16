@@ -1,0 +1,85 @@
+//Variables de Tipografía
+$GilroyBold: 'gilroybold'
+$GilroyLight: 'gilroylight'
+$GilroyMedium: 'gilroymedium'
+$GilroyRegular: 'gilroyregular'
+$GilroyThin: 'gilroythin'
+$GilroyExtraBold: 'gilroyextrabold'
+
+//Variables de Tipografia
+$RojoPoker: #c31f39
+$AmarilloPoker: #f1c743
+
+html, body
+  height: 100%
+
+body
+  margin: 0
+  padding: 0
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+  font-family: $GilroyBold
+  color: white
+  *
+    position: relative
+    box-sizing: border-box
+    &:focus
+      outline: 0
+  a
+    border: 0
+    text-decoration: none
+    font-weight: normal
+  input, select
+    border: 0
+    -webkit-appearance: none
+    -webkit-border-radius: 0px
+  button
+    border: 0
+    background: none
+    cursor: pointer
+  p, span, h1, h2, h3, h4, h5, h6
+    margin: 0
+    line-height: 1
+  ul
+    padding: 0
+    margin: 0
+    li
+      list-style-type: none
+  img
+    max-width: 100%
+
+=flexInit()
+  display: -webkit-box
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+
+=prefix($property, $value, $prefixes: ()) 
+  @each $prefix in $prefixes 
+    #{'-' + $prefix + '-' + $property}: $value
+  #{$property}: $value
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+=sombra($v1, $v2, $v3, $v4, $c1, $c2, $c3, $o)
+  -webkit-box-shadow: $v1 $v2 $v3 $v4 rgba($c1,$c2,$c3,$o)
+  -moz-box-shadow: $v1 $v2 $v3 $v4 rgba($c1,$c2,$c3,$o)
+  box-shadow: $v1 $v2 $v3 $v4 rgba($c1,$c2,$c3,$o)
+
+=transformacion($accion)
+  -webkit-transform: $accion
+  -ms-transform: $accion
+  transform: $accion
+
+=transicion($accion)
+  -webkit-transition: $accion
+  -ms-transition: $accion
+  transition: $accion
